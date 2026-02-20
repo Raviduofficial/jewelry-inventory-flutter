@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/item_list_screen.dart';
+import 'utils/app_theme.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop Inventory',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.teal,
-      ),
-      home: const ItemListScreen(),
+      
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system, 
+      
+      home: const ItemListScreen(), 
     );
   }
 }
